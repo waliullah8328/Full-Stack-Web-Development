@@ -28,10 +28,15 @@ def manyvalueprint(*num):
         sum = sum+i
     print(sum)
 manyvalueprint(10,20,30,40,50)
-def nested_func(a,b):
-    a = a+10
-    b = b+20
-    return a+b
+# nested function
+def nested_function(a,b,c):
+    a = a + 10
+    b = b + 20
+    def another_function(a,b):
+        result = a+b
+        def other_function(result,c):
+            return result * c
+        return other_function(result,c)
+    return another_function(a,b)
 
-
-print(nested_func(100, 200))
+print(nested_function(100,20,300))
